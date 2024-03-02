@@ -49,16 +49,17 @@ class App:
         if not clues:
             clues.append("Bagels")
 
-        # if all correct digits
-        if clues.count("Fermi") == 3:
+        # else-if all correct digits
+        elif clues.count("Fermi") == 3:
             clues.clear()
             print("You got it!")
-        
-        # shuffle clues to prevent hint position from giving away information
-        # shuffle(clues)
 
-        # sort is faster than shuffle and obfuscates information just the same
-        clues.sort()
+        # shuffle clues to prevent hint position from giving away information
+        elif len(clues) > 1:  # only shuffle if more than one element
+            # shuffle(clues)
+            # sort is faster than shuffle and obfuscates information just the same
+            clues.sort()
+        
         return clues
 
     @classmethod
